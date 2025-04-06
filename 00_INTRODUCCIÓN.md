@@ -1,137 +1,118 @@
-# 🧠 Plan de Estudio Completo para Dominar Spring Framework
+# Temario para Aprender Spring
 
-Este temario está diseñado para que aprendas Spring desde cero hasta un nivel profesional, incluyendo arquitectura limpia, pruebas, microservicios y herramientas avanzadas como Spring Cloud, Event-Driven y programación reactiva.
+## Conocimientos Previos Necesarios
+1. **Java Básico/Intermedio:**
+   - Sintaxis: variables, operadores, estructuras de control.
+   - POO: clases, herencia, interfaces, polimorfismo.
+   - Manejo de excepciones (`try-catch`).
+   - Colecciones (`List`, `Map`, `Set`).
+   - Lambda expressions y streams (Java 8+).
 
----
-
-## 🌱 Módulo 1: Fundamentos de Spring
-
-- ¿Qué es Spring y para qué se usa?
-- Inversión de Control (IoC) y Principio de Inyección de Dependencias (DI)
-- Beans, Containers y Ciclo de vida
-- Configuración básica de un proyecto Spring (con Maven o Gradle)
-- Tipos de configuración: XML vs Anotaciones vs JavaConfig
-- 🔧 **Práctica:** Crear un proyecto simple con servicios y beans inyectados
-
----
-
-## 🚀 Módulo 2: Spring Boot - Productividad al Máximo
-
-- ¿Qué es Spring Boot y por qué usarlo?
-- Estructura de un proyecto Spring Boot
-- Configuración con `application.properties` o `application.yml`
-- AutoConfiguración y convenciones
-- Spring Boot DevTools y Hot Reload
-- Pruebas básicas con JUnit y Mockito
+2. **Herramientas Básicas:**
+   - Maven o Gradle (gestión de dependencias).
+   - Git (control de versiones).
+   - IDE: IntelliJ IDEA, Eclipse o VS Code.
 
 ---
 
-## 🌐 Módulo 3: Web y APIs REST con Spring MVC
+## Módulo 1: Fundamentos de Spring
+1. **¿Qué es Spring?**
+   - Arquitectura modular.
+   - Spring vs Spring Boot.
+   - Inversión de Control (IoC) y Spring Container.
+   - Inyección de Dependencias (DI).
 
-- Arquitectura MVC en Spring
-- Controladores REST (`@RestController`)
-- Manejo de peticiones HTTP (`@GetMapping`, `@PostMapping`, etc.)
-- Envío y recepción de JSON (`@RequestBody`, `@PathVariable`, DTOs)
-- Validaciones con `@Valid`, `@NotNull`, etc.
-- Manejo de errores globales (`@ControllerAdvice`)
-- 🔧 **Práctica:** Crear una API REST completa (CRUD)
+2. **Spring Core:**
+   - Configuración con `@Configuration` y `@Bean`.
+   - Anotaciones clave: `@Component`, `@Service`, `@Repository`, `@Autowired`.
 
----
-
-## 🗃️ Módulo 4: Acceso a Datos con Spring Data JPA
-
-- ¿Qué es JPA? ¿Qué rol cumple en Spring?
-- Configuración de base de datos (PostgreSQL, MySQL)
-- Entidades y mapeo con `@Entity`, `@Id`, `@ManyToOne`, etc.
-- Repositorios con `JpaRepository` y consultas personalizadas
-- Relaciones entre entidades (OneToMany, ManyToMany)
-- Uso de `CommandLineRunner` para precargar datos
+3. **Spring Boot:**
+   - Creación de proyectos con Spring Initializr.
+   - Autoconfiguración y `application.properties`.
+   - Uso de `SpringApplication`.
 
 ---
 
-## 🔐 Módulo 5: Seguridad con Spring Security
+## Módulo 2: Desarrollo Web con Spring
+1. **Spring MVC:**
+   - Controladores con `@RestController` y `@Controller`.
+   - Mapeo de rutas (`@GetMapping`, `@PostMapping`).
+   - Thymeleaf o HTML para vistas (opcional).
 
-- ¿Qué es Spring Security?
-- Autenticación básica (login/contraseña)
-- Autorización con roles y permisos
-- Configuración con `SecurityFilterChain`
-- Seguridad con JWT (JSON Web Tokens)
-- CORS y seguridad en APIs REST
+2. **APIs REST:**
+   - Manejo de JSON (`@RequestBody`, `@ResponseBody`).
+   - Validación de datos (`@Valid`).
+   - Documentación con Swagger/OpenAPI.
 
----
-
-## 🧼 Módulo 6: Arquitectura Limpia y Buenas Prácticas
-
-- Capas de aplicación: Controller, Service, Repository, DTOs
-- Separación de responsabilidades
-- Manejo global de excepciones (`@ExceptionHandler`)
-- Uso de MapStruct o ModelMapper para transformar entidades
-- Documentación de APIs con Swagger/OpenAPI
+3. **Seguridad:**
+   - Spring Security básico (autenticación y autorización).
+   - JWT para APIs.
 
 ---
 
-## 🧪 Módulo 7: Testing en Spring
+## Módulo 3: Persistencia de Datos
+1. **Spring Data JPA:**
+   - Configuración de bases de datos (H2, MySQL, PostgreSQL).
+   - Repositorios (`CrudRepository`, `JpaRepository`).
+   - Consultas con `@Query` y métodos derivados.
 
-- Pruebas unitarias con JUnit y Mockito
-- Pruebas de integración con `@SpringBootTest`
-- Pruebas de endpoints con MockMvc
-- Pruebas con TestContainers (bases de datos reales para testing)
-
----
-
-## 🧰 Módulo 8: Herramientas Complementarias
-
-- Spring Boot Actuator (monitoreo y métricas)
-- Spring DevTools y LiveReload
-- Logs con Logback y niveles de log
-- Perfiles de configuración (`application-dev.yml`, `application-prod.yml`)
+2. **Transacciones:**
+   - `@Transactional` y manejo ACID.
 
 ---
 
-## ☁️ Módulo 9: Microservicios con Spring Cloud
+## Módulo 4: Temas Avanzados
+1. **Microservicios:**
+   - Spring Cloud (Eureka, Zuul, Config Server).
+   - Comunicación entre servicios (Feign, RestTemplate).
+   - Circuit Breaker con Resilience4j o Hystrix.
 
-- Introducción a Microservicios
-- Comunicación entre servicios (REST, Feign)
-- Spring Cloud Config (configuración centralizada)
-- Service Discovery con Eureka
-- API Gateway con Spring Cloud Gateway
-- Circuit Breaker con Resilience4j
+2. **Reactive:**
+   - Spring WebFlux (programación reactiva).
+   - Diferencias entre bloqueante y no bloqueante.
 
----
+3. **Cloud:**
+   - Despliegue en AWS/Azure/Google Cloud.
+   - Spring Cloud AWS y Kubernetes (conceptos básicos).
 
-## ⚡ Módulo 10: Arquitectura Event-Driven (orientada a eventos)
+4. **Serverless:**
+   - Funciones Lambda con AWS y Spring Cloud Function.
 
-- Introducción a Event-Driven Architecture
-- Publicación y consumo de eventos con `ApplicationEventPublisher`
-- Uso de colas como Kafka o RabbitMQ
-- Spring Cloud Stream
+5. **Event Driven:**
+   - Spring Kafka o RabbitMQ (mensajería asíncrona).
+   - Event Sourcing y CQRS (intro).
 
----
-
-## ⚛️ Módulo 11: Programación Reactiva con Spring WebFlux
-
-- ¿Qué es programación reactiva?
-- Diferencia entre Spring MVC y Spring WebFlux
-- Uso de `Mono` y `Flux`
-- Controladores reactivos (`@RestController` con WebFlux)
-- Acceso a datos reactivo con R2DBC
-- Integración con MongoDB reactivo
+6. **Batch:**
+   - Spring Batch (procesamiento por lotes).
+   - Jobs, Steps y `ItemReader`/`ItemWriter`.
 
 ---
 
-## 🏁 Módulo 12: Proyecto Final
+## Módulo 5: Proyectos Integradores
+1. **Aplicación Web Full-Stack:**
+   - Backend (Spring Boot) + Frontend (React/Angular).
+   - Autenticación JWT + base de datos.
 
-- ✅ Crear una aplicación profesional con:
-  - Registro y login con JWT
-  - CRUD completo con Spring Data JPA
-  - Seguridad por roles y permisos
-  - Arquitectura limpia en capas
-  - Documentación con Swagger
-  - Base de datos PostgreSQL
-  - (Opcional) despliegue con Docker o en la nube (Heroku, Railway)
+2. **Sistema de Microservicios:**
+   - 2-3 servicios comunicándose (ej: pedidos, inventario, usuarios).
+   - Uso de Spring Cloud Gateway y Eureka.
+
+3. **Procesamiento de Datos:**
+   - Spring Batch para importar/exportar archivos CSV.
 
 ---
 
-¡Listo! Este plan te llevará desde cero hasta ser un pro con Spring y sus herramientas modernas. 💪
+## Módulo 6: IA Generativa (Opcional)
+1. **Integración con Spring:**
+   - Uso de APIs de IA (OpenAI, TensorFlow Serving).
+   - Ejemplo: Chatbot con Spring Boot y GPT-3/4.
+   - Requisitos: Conocimiento de APIs REST y JSON.
 
-> ¿Quieres que te lo estructure también en semanas o en un tablero de avance (tipo Notion o Trello)? Solo dime y lo armamos 😉
+---
+
+## Herramientas Adicionales
+- **Testing:** JUnit 5, Mockito, Testcontainers.
+- **DevOps:** Docker, Jenkins (CI/CD básico).
+- **Monitoreo:** Spring Actuator, Prometheus/Grafana.
+
+---
