@@ -1,6 +1,6 @@
-# Temario para Aprender Spring
+# 🌾 Temario para Aprender Spring ☕
 
-## Conocimientos Previos Necesarios
+## ☕ Conocimientos Previos Necesarios
 1. **Java Básico/Intermedio:**
    - Sintaxis: variables, operadores, estructuras de control.
    - POO: clases, herencia, interfaces, polimorfismo.
@@ -15,7 +15,7 @@
 
 ---
 
-## Módulo 1: Fundamentos de Spring
+## ⛏ Módulo 1: Fundamentos de Spring
 1. **¿Qué es Spring?**
    - Arquitectura modular.
    - Spring vs Spring Boot.
@@ -33,7 +33,7 @@
 
 ---
 
-## Módulo 2: Desarrollo Web con Spring
+## 🧠 Módulo 2: Desarrollo Web con Spring
 1. **Spring MVC:**
    - Controladores con `@RestController` y `@Controller`.
    - Mapeo de rutas (`@GetMapping`, `@PostMapping`).
@@ -50,7 +50,7 @@
 
 ---
 
-## Módulo 3: Persistencia de Datos
+## 📂 Módulo 3: Persistencia de Datos
 1. **Spring Data JPA:**
    - Configuración de bases de datos (H2, MySQL, PostgreSQL).
    - Repositorios (`CrudRepository`, `JpaRepository`).
@@ -61,7 +61,7 @@
 
 ---
 
-## Módulo 4: Temas Avanzados
+## 💡 Módulo 4: Temas Avanzados
 1. **Microservicios:**
    - Spring Cloud (Eureka, Zuul, Config Server).
    - Comunicación entre servicios (Feign, RestTemplate).
@@ -88,7 +88,7 @@
 
 ---
 
-## Módulo 5: Proyectos Integradores
+## 🚀 Módulo 5: Proyectos Integradores
 1. **Aplicación Web Full-Stack:**
    - Backend (Spring Boot) + Frontend (React/Angular).
    - Autenticación JWT + base de datos.
@@ -102,7 +102,7 @@
 
 ---
 
-## Módulo 6: IA Generativa (Opcional)
+## 🤖 Módulo 6: IA Generativa (Opcional)
 1. **Integración con Spring:**
    - Uso de APIs de IA (OpenAI, TensorFlow Serving).
    - Ejemplo: Chatbot con Spring Boot y GPT-3/4.
@@ -110,7 +110,7 @@
 
 ---
 
-## Herramientas Adicionales
+## 🔰 Herramientas Adicionales
 - **Testing:** JUnit 5, Mockito, Testcontainers.
 - **DevOps:** Docker, Jenkins (CI/CD básico).
 - **Monitoreo:** Spring Actuator, Prometheus/Grafana.
