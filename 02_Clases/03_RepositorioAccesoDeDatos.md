@@ -11,30 +11,42 @@ Existen dos métodos para implementarla correctamente
 
 ---
  
-### 🧱 Enfoque DAO (@Repository en clases DAO)
+### 🔹 Enfoque DAO: interfaz + implementación
 
-Un DAO es una clase que proporciona una interfaz abstracta para interactuar con una fuente de datos, encapsulando todos los detalles de acceso a la base de datos. Este patrón es útil cuando se necesita un control más detallado sobre las operaciones de persistencia.
+Con el patrón DAO sueles definir una interfaz con las operaciones de acceso a datos y luego una clase de implementación anotada con @Repository que usa EntityManager. Esto te da control total sobre cada consulta y te permite, por ejemplo, combinar múltiples fuentes de datos o usar SQL/JPA avanzado.
 
+**Interfaz:**
+```java
+public interface UsuarioDAO {
+    Usuario buscarPorId(Long id);
+    void guardar(Usuario usuario);
+    void eliminar(Usuario usuario);
+    // otras operaciones...
+}
+```
+
+**Implementación:**
 ```java
 @Repository
-public class UsuarioDAO {
-
+public class UsuarioDAOImpl implements UsuarioDAO {
     @PersistenceContext
-    private EntityManger entityManger;
+    private EntityManager em;
 
+    @Override
     public Usuario buscarPorId(Long id) {
-        return entityManager.find(Usuario.class, id);
+        return em.find(Usuario.class, id);
     }
 
-    public void guardar(Usuario usuario){
-        entityManager.persist(usuario);
+    @Override
+    public void guardar(Usuario usuario) {
+        em.persist(usuario);
     }
 
-    public void eliminar(Usuario usuario){
-        entityManager.remove(usuari);
+    @Override
+    public void eliminar(Usuario usuario) {
+        em.remove(usuario);
     }
-
-    // Otros métodos personalizados...
+    // ...
 }
 ```
 
@@ -42,11 +54,27 @@ public class UsuarioDAO {
 
 ### 🧰 Enfoque Repository (@Repository en interfaces)
 
-En Spring Data JPA, un Repository es una interfaz que extiende una de las interfaces proporcionadas por el framework, como [JpaRepository](/04_Librerías/05_Persistencia/JPA.md) o [CrudRepository](/04_Librerías/05_Persistencia/CRUDREP.md). Spring se encarga de proporcionar la implementación en tiempo de ejecución.
+Con el patrón Repository de Spring Data [JPA](/04_Librerías/05_Persistencia/JPA.md), simplemente defines una interfaz que extiende JpaRepository<T,ID> (o [CrudRepository](/04_Librerías/05_Persistencia/CRUDREP.md), etc.), y Spring genera la implementación automáticamente. Obtienes CRUD, consultas derivadas por nombre y paginación sin escribir código de persistencia.
 
 ```java
-@Repository
+@Repository  // opcional: Spring lo detecta por el repositorio de Data JPA
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
     List<Usuario> findByNombre(String nombre);
+}
+```
+Si empleas JPA (ya sea en tu DAO o con Spring Data), SIEMPRE tus clases de dominio deben estar anotadas con @Entity.
+
+```java
+@Entity
+@Table(name = "usuarios")
+public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(length = 100, nullable = false)
+    private String nombre;
+
+    // …
 }
 ```
